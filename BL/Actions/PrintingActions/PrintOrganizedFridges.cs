@@ -1,4 +1,5 @@
 ﻿using Refrigirator.BL.Actions.ItemActions;
+using Refrigirator.CommonLayer.CreatingNewFridges;
 using Refrigirator.DAL;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,9 @@ namespace Refrigirator.BL.Actions.PrintingActions
         // Constructor
         public PrintOrganizedFridges()
         {
-            CreatingFridgeWithInfo1 createFridge1 = new CreatingFridgeWithInfo1();
-            CreateNewFridgeWithInfo2 createFridge2 = new CreateNewFridgeWithInfo2();
+            CreatingManyFridges createFridges = new CreatingManyFridges();
 
-            this.Fridges = new List<Fridge>();
-            this.Fridges.Add(createFridge1.Fridge);
-            this.Fridges.Add(createFridge2.Fridge);
+            this.Fridges = createFridges.allFridges;;
 
             OrganizedFridgersInOrder organizedFridges = new OrganizedFridgersInOrder(this.Fridges);
             organizedFridges.PrintList();

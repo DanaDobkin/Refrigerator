@@ -7,11 +7,13 @@ namespace Refrigirator
     class Shelf
     {
         // Properties
+
         public int FloorNumber { get; set; }
         public double FreeSpace { get; set; }
         public List<Item> Items { get; set; }
 
         // Constructor
+        //CR: Variables in lowercase
         public Shelf(int FloorNumber, int FreeSpace, List<Item> Items)
         {
             this.FloorNumber = FloorNumber;
@@ -21,11 +23,14 @@ namespace Refrigirator
         }
 
         // Methods
+        //CR: Don't use this
         public double FreeSpaceOnShelf()
         {
             return (this.FreeSpace - this.TakenSpaceByAllItemsOnSpecificShalf(this));
         }
 
+        //CR: You don't need to implement by yourself known algorithems
+        //CR: SRP is broken, fix it to functions
         public double TakenSpaceByAllItemsOnSpecificShalf(Shelf shelf)
         {
             if (!(shelf is null))
@@ -47,6 +52,7 @@ namespace Refrigirator
             return 0;
         }
 
+        //CR: Don't implement algoritems by yourself anf the printing ui
         public override string ToString()
         {
             string s = "\nFloor Number : " + this.FloorNumber + "\n";
@@ -71,7 +77,9 @@ namespace Refrigirator
 
             return s;
         }
-
+        
+        //CR: Don't implement by yourself algorithems
+        //CR: Maybe needs to be in other class?  //I didnt see the whole code but think about it
         public void SetEveryItemsToBeInThisFloor()
         {
             if (this.Items != null)

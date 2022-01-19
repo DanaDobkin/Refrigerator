@@ -1,5 +1,6 @@
 ﻿using Refrigirator.BL.Actions;
 using Refrigirator.BL.Actions.PrintingActions;
+using Refrigirator.CommonLayer.CreatingNewFridges;
 using Refrigirator.DAL;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,15 @@ namespace Refrigirator.BL.FinalPrintResult
         // Properties
         private Fridge Fridge;
 
-        // Constructor
+        // Constructorl
         public FinalPrint()
         {
             // Part 1 
             Console.WriteLine("Your Fridge: ");
-            CreatingFridgeWithInfo1 GettingNewFrisge = new CreatingFridgeWithInfo1();
-            this.Fridge = GettingNewFrisge.Fridge;
+            CreateOneNewFridge createFridges = new CreateOneNewFridge();
+            this.Fridge = createFridges.Fridge;
 
-            // Part 2
+            //Part 2
             //PrintLeftFreeSpaceInFridge leftSpace = new PrintLeftFreeSpaceInFridge(this.Fridge);
 
             //Console.WriteLine("Fridge Consistency: ");
@@ -32,12 +33,10 @@ namespace Refrigirator.BL.FinalPrintResult
 
             //FridgeCleaning cleanFridge = new FridgeCleaning(this.Fridge);
 
-            PossibleFoodOrDrinkInputs FoodOrDrinkInputs = new PossibleFoodOrDrinkInputs();
-            PossibleFoodTypeInputs FoodTypeInputs = new PossibleFoodTypeInputs();
-            PrintWhatYouWantToEat wantToEat = new PrintWhatYouWantToEat(this.Fridge, FoodTypeInputs.possibleInputs, FoodOrDrinkInputs.possibleInputs);
+            //PrintWhatYouWantToEat wantToEat = new PrintWhatYouWantToEat(this.Fridge);
 
-            // These three following functions are based on the same structure, 
-            // And all return the same error, which is about index:
+            ////These three following functions are based on the same structure,
+            ////And all return the same error, which is about index:
 
             //// Doesn't Work
             //PrintAllExpiredDatesInOrder expiredDates = new PrintAllExpiredDatesInOrder(this.Fridge);

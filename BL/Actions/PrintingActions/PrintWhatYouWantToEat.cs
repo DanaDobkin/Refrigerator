@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Refrigirator.DAL;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,11 +14,15 @@ namespace Refrigirator.BL.Actions.PrintingActions
 
 
         // Constructor
-        public PrintWhatYouWantToEat(Fridge Fridge, List<string> possibleFoodTypes, List<string> possibleFoodOrDrinkInputs)
+        public PrintWhatYouWantToEat(Fridge Fridge)
         {
             this.Fridge = Fridge;
-            this.possibleFoodTypes = possibleFoodTypes;
-            this.possibleFoodOrDrinkInputs = possibleFoodOrDrinkInputs;
+
+            PossibleFoodOrDrinkInputs FoodOrDrinkInputs = new PossibleFoodOrDrinkInputs();
+            PossibleFoodTypeInputs FoodTypeInputs = new PossibleFoodTypeInputs();
+
+            this.possibleFoodTypes = FoodOrDrinkInputs.possibleInputs;
+            this.possibleFoodOrDrinkInputs = FoodTypeInputs.possibleInputs;
 
             Console.WriteLine("What Do You Want To Eat?\nFood Or Drink?");
             string FoodOrDrink = Console.ReadLine();

@@ -1,4 +1,5 @@
-﻿using Refrigirator.DAL;
+﻿using Refrigirator.CommonLayer.CreatingNewItems;
+using Refrigirator.DAL;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Refrigirator.BL.Actions.PrintingActions
         {
             this.Fridge = Fridge;
 
-            CreateNewItem newItem = new CreateNewItem();
+            CreateOneNewItem newItem = new CreateOneNewItem();
             PutNewItemIn putNewItem = new PutNewItemIn(this.Fridge, newItem.Item);
             putNewItem.CheckIfAdded();
             Console.WriteLine(this.Fridge.ToString());

@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Refrigirator
 {
+    
+    //CR: Function not in a class
     class AllShelfsByEmptySpace
     {
         // Properties

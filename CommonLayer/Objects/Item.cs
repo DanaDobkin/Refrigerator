@@ -15,6 +15,7 @@ namespace Refrigirator
         public double Capacity { get; set; }
 
         // Constructor
+        //CR: Variables in lowercase
         public Item(string ItemName, string FoodOrDrink, string FoodType, DateTime LastDay, double Capacity)
         {
             this.ItemName = ItemName;
@@ -25,6 +26,7 @@ namespace Refrigirator
         }
 
         // Methods
+        //CR: Don't implement algoritems by yourself anf the printing ui
         public override string ToString()
         {
             string s = "\nItem Name : " + this.ItemName + "\n";

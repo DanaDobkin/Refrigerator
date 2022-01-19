@@ -4,18 +4,18 @@ using System.Text;
 
 namespace Refrigirator.DAL
 {
-    class PossibleFoodTypeInputs
+    //CR: Not in the common layer
+    class PossibleFoodOrDrinkInputs
     {
         // Properties
         public List<string> possibleInputs { get; set; }
 
         // Constructor
-        public PossibleFoodTypeInputs()
+        public PossibleFoodOrDrinkInputs()
         {
             this.possibleInputs = new List<string>();
-            this.possibleInputs.Add("Parve");
-            this.possibleInputs.Add("Milky");
-            this.possibleInputs.Add("Meety");
+            this.possibleInputs.Add("Food");
+            this.possibleInputs.Add("Drink");
         }
     }
 }
